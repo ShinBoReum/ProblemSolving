@@ -39,19 +39,13 @@ public class PlusMinusZero {
             int num = arr[i];
             System.out.println("this.num: "+arr[i]);
             if(num == 0 ){
-//                System.out.println("this is zero: " + arr[i]);
                 zeroCount++;
             }else if(num<0){
-//                System.out.println("this is negative: " + arr[i]);
                 minusCount++;
             }else {
-//                System.out.println("this is positive: " + arr[i]);
                 plusCount++;
             }
         }
-        System.out.println(plusCount/6);
-        System.out.println(minusCount/6);
-        System.out.println(zeroCount/6);
 
         if(plusCount!=0) {
             plus = (float) plusCount / arr.length;
@@ -62,10 +56,17 @@ public class PlusMinusZero {
         if(zeroCount!=0){
             zero = (float)zeroCount/arr.length;
         }
-
-        System.out.println(plus);
-        System.out.println(minus);
-        System.out.println(zero);
+        /*아래와 같이 출력하면 뒷자리 0이 안나옴
+        * 기대출력값은 소숫점 6자리까지
+        * float 은 4byte
+        * double 은 8byte
+        *
+        * System.out.println(plus);
+        * System.out.println(minus);
+        * System.out.println(zero);*/
+        System.out.println(String.format("%.6f",plus) );
+        System.out.println(String.format("%.6f",minus) );
+        System.out.println(String.format("%.6f",zero) );
     }
 
     public static void main(String[] args) {
