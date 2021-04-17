@@ -2,6 +2,7 @@ package com.example.problem;
 
 import java.util.*;
 /*
+난이도 : easy
 계단 출력하기
 n=6 일떄
 51
